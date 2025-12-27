@@ -1,0 +1,10 @@
+{
+  "name": "auth-vault",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "hardhat": "2.22.1",
+    "@nomiclabs/hardhat-ethers": "2.2.3",
+    "ethers": "5.7.2"
+  }
+}

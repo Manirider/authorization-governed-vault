@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  auth-vault:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: auth_vault_system
+    ports:
+      - "8545:8545"
+    restart: unless-stopped
