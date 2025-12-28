@@ -22,7 +22,7 @@ describe("Counter", async function () {
     const counter = await viem.deployContract("Counter");
     const deploymentBlockNumber = await publicClient.getBlockNumber();
 
-    // run a series of increments
+
     for (let i = 1n; i <= 10n; i++) {
       await counter.write.incBy([i]);
     }
@@ -35,7 +35,6 @@ describe("Counter", async function () {
       strict: true,
     });
 
-    // check that the aggregated events match the current value
     let total = 0n;
     for (const event of events) {
       total += event.args.by;
