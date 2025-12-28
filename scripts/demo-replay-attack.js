@@ -28,13 +28,13 @@ async function main() {
 
   console.log("🔹 First withdrawal (expected SUCCESS)");
   await (await vault.withdraw(signer.address, amount, nonce, signature)).wait();
-  console.log("✅ First withdrawal success");
+  console.log(" First withdrawal success");
 
-  console.log("\n🔁 Replay attack (expected FAILURE)");
+  console.log("\nReplay attack (expected FAILURE)");
   try {
     await (await vault.withdraw(signer.address, amount, nonce, signature)).wait();
   } catch (err) {
-    console.log("❌ Replay blocked as expected");
+    console.log("Replay blocked as expected");
     console.log("Reason:", err.reason || "Authorization already used");
   }
 }
